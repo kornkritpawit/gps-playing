@@ -19,8 +19,7 @@ var getLocation = setInterval(()=>{
     }
     let promise = $.post("https://5f3bd488fff8550016ae5bfc.mockapi.io/place", postLocation);
     promise.then(
-      data => console.log('data ', null),
-      error => console.log('error: ', error)
+      prompt("Thank you")
     )
     clearInterval(getLocation);
   }
