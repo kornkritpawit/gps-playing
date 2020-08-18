@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="startLat"></p>
+  <p id="startLon"></p>
+  <!-- <script src="./getLocation.js"></script> -->
+  <script>
+    window.onload = function () {
+      var startPos;
+      var geoSuccess = function (position) {
+        startPos = position;
+        document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+        document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+      };
+      navigator.geolocation.getCurrentPosition(geoSuccess);
+    };
+  </script>
+</body>
+
+</html>
