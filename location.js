@@ -22,10 +22,10 @@ var getLocation = setInterval(()=>{
       longtitude: longti
     }
     let promise = $.post("https://5f3bd488fff8550016ae5bfc.mockapi.io/place", postLocation);
+    clearInterval(getLocation);
     promise.then(
       alert("Thank you")
     )
-    clearInterval(getLocation);
   }
 }, 4000)
 
