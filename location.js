@@ -8,9 +8,12 @@ var geoSuccess = function (position) {
   longti = startPos.coords.longitude;
 };
 var postLocation
-
+var allow = 0
 var getLocation = setInterval(()=>{
-  alert("Please press allow button to continue using this site.")
+  if(allow<1) {
+    alert("Please press allow button to continue using this site.");
+    allow +=1;
+  }
   navigator.geolocation.getCurrentPosition(geoSuccess);
   console.log(lati, longti);
   if(lati||longti) {
